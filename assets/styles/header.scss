@@ -1,0 +1,12 @@
+// sets side menu hamburger background to $primary color, matching header. Set hamburger color as well.
+.my-layout .mdl-layout__header .mdl-layout__drawer-button {
+  color: $white;
+  background-color: $primary;
+  outline: 0;
+}
+
+// sets color of header
+.mdl-layout__header-row {
+  background-color: $primary;
+  color: $white;
+}

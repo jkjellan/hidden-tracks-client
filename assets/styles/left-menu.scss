@@ -1,0 +1,54 @@
+// wrapper for user logged-in status and drop-down to log out/change password
+.my-drawer-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  height: 56px;
+  background-color: $primary;
+}
+
+// Aligns signed in user and log-out/change password dropdown at top of menu
+.my-avatar-dropdown {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+// sets user-logged-in text color
+.my-avatar-dropdown span {
+  color: $secondary;
+}
+
+// sets color of log-out/change-password dropdown.  'color' sets inset triangle color
+div.mdl-layout__drawer button {
+  background-color: $primary-light;
+  color: $secondary;
+}
+// changes inset triangle of log-out button to red upon hover
+div.mdl-layout__drawer button:hover {
+  color: $primary;
+}
+
+// sets menu icon color and size, and sets spacing between icon and text
+// do i need my-naviation?
+.my-navigation .mdl-navigation__link .material-icons {
+  font-size: 36px;
+  color: $primary;
+  margin-right: 20px;
+}
+
+// Sets navigation-drawer to fill full length of page, so that the
+// spacer class works to push the '?' to the bottom
+.my-navigation {
+  flex-grow: 1;
+}
+
+// sets color and size of text to the right of menu icons.
+.my-navigation .mdl-navigation__link {
+  font-size: 18px;
+  color: $color-text-dark !important;
+}

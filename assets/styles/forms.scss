@@ -1,0 +1,49 @@
+// centers Log-in forms in center of page
+main {
+  margin: 5% auto;
+}
+
+// adds padding around form for aesthetics
+main form {
+  padding: 30px;
+  background: $off-white;
+}
+
+// necessary for input animation to align with bottom-border
+.mdl-textfield__label {
+  margin-bottom: 0;
+}
+
+// Sets color of form header background and text
+.my-form-header {
+  background-color: $primary;
+  color: $white !important;
+}
+
+.my-button {
+  color: $color-text-dark !important;
+  font-weight: 500 !important;
+}
+
+// Sets background color and height of form footer
+.my-form-footer {
+  background-color: $primary;
+  height: 30px;
+}
+
+// Vertically centers text in forms
+.my-form-footer p {
+  padding-left: 15px;
+  line-height: 30px;
+  color: $white;
+}
+
+.sign-up-link {
+  padding-left: 5px;
+  color: $secondary;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    font-size: 16px;
+  }
+}
