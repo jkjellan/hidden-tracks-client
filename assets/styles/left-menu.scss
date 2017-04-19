@@ -5,8 +5,16 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 16px;
-  height: 56px;
+  height: 64px;
   background-color: $primary;
+}
+
+// MDL header changes height at around 1025px, so setting
+// media query on drawer header to match
+@media (max-width: 1025px) {
+  .my-drawer-header {
+    height: 56px;
+  }
 }
 
 // Aligns signed in user and log-out/change password dropdown at top of menu
@@ -45,10 +53,12 @@ div.mdl-layout__drawer button:hover {
 // spacer class works to push the '?' to the bottom
 .my-navigation {
   flex-grow: 1;
+  background-color: $background-light;
 }
 
-// sets color and size of text to the right of menu icons.
+// sets color, size, and alignment of text to the right of menu icons.
 .my-navigation .mdl-navigation__link {
   font-size: 18px;
   color: $color-text-dark !important;
+  padding-left: 25px !important;
 }

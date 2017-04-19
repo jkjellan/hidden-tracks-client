@@ -21,7 +21,7 @@
       <div class="my-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="my-header mdl-layout__header">
           <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Home</span>
+            <span class="mdl-layout-title"></span>
             <div class="mdl-layout-spacer"></div>
             <div class="my-expand-search mdl-textfield mdl-js-textfield mdl-textfield--expandable">
               <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -70,36 +70,33 @@
 
       <!-- Start of main content area i.e auth forms and application content -->
       <main class="mdl-layout__content">
-          <div class="page-content">
-            <h1 class="main-header"></h1>
 
             <!-- Sign in form-->
-            <div id="sign-in-container" class="form-card mdl-card mdl-shadow--4dp">
+            <div id="sign-in-wrapper" class="my-auth-card mdl-card mdl-shadow--6dp">
               <div class="my-form-header mdl-card__title">
                 <h2 class="mdl-card__title-text">Sign In</h2>
               </div>
+                <form id="sign-in">
 
-              <form id="sign-in">
-                <fieldset style="display:flex;">
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" name="credentials[email]" id="sign-in-email">
-                    <label class="mdl-textfield__label" for="sign-in-email">Email</label>
-                  </div>
-                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="password" name="credentials[password]" id="sign-in-password">
-                    <label class="mdl-textfield__label" for="sign-in-password">Password</label>
-                  </div>
-                  <button type="submit" name="submit" class="my-button form-button mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Sign In
-                  </button>
-                </fieldset>
-              </form>
-              <div class="my-form-footer">
-                <p>Don't have an account?
-                  <span id="sign-up-redirect" class="sign-up-link">Sign Up!</span>
-                </p>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" name="credentials[email]" id="sign-in-email">
+                      <label class="mdl-textfield__label" for="sign-in-email">Email</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="password" name="credentials[password]" id="sign-in-password">
+                      <label class="mdl-textfield__label" for="sign-in-password">Password</label>
+                    </div>
+                    <button type="submit" name="submit" class="my-button form-button mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                      Sign In
+                    </button>
+
+                </form>
+                <div class="my-form-footer">
+                  <p>Don't have an account?
+                    <span id="sign-up-redirect" class="sign-up-link">Sign Up!</span>
+                  </p>
+                </div>
               </div>
-            </div>
             <!-- End of Sign-in -->
 
 

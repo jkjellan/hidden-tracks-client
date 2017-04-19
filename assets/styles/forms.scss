@@ -1,12 +1,12 @@
 // centers Log-in forms in center of page
-main {
-  margin: 5% auto;
+.my-auth-card {
+  margin: 8% auto;
 }
 
 // adds padding around form for aesthetics
 main form {
   padding: 30px;
-  background: $off-white;
+  background: $white;
 }
 
 // necessary for input animation to align with bottom-border
@@ -28,13 +28,13 @@ main form {
 // Sets background color and height of form footer
 .my-form-footer {
   background-color: $primary;
-  height: 30px;
+  height: 35px;
 }
 
 // Vertically centers text in forms
 .my-form-footer p {
   padding-left: 15px;
-  line-height: 30px;
+  line-height: 35px;
   color: $white;
 }
 
