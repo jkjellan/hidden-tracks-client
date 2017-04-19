@@ -100,6 +100,62 @@
             <!-- End of Sign-in -->
 
 
+            <!-- Sign Up form-->
+            <div id="sign-up-wrapper" class="my-auth-card mdl-card mdl-shadow--6dp">
+              <div class="my-form-header mdl-card__title">
+                <h2 class="mdl-card__title-text">Create Account</h2>
+              </div>
+                <form id="sign-up">
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" name="credentials[email]" id="sign-in-email">
+                      <label class="mdl-textfield__label" for="sign-in-email">Email</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="password" name="credentials[password]" id="sign-in-password">
+                      <label class="mdl-textfield__label" for="sign-in-password">Password</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="password" name="credentials[password_confirmation]" id="sign-in-password">
+                      <label class="mdl-textfield__label" for="sign-in-password">Confirm Password</label>
+                    </div>
+                    <button type="submit" name="submit" class="my-button form-button mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                      Sign Up
+                    </button>
+
+                </form>
+                <div class="my-form-footer">
+                  <p>You probably won't regret it!</p>
+                </div>
+              </div>
+            <!-- End of Sign-Up -->
+
+            <!-- Change Password Form-->
+            <div id="change-password-wrapper" class="my-auth-card mdl-card mdl-shadow--6dp">
+              <div class="my-form-header mdl-card__title">
+                <h2 class="mdl-card__title-text">Change Password</h2>
+              </div>
+                <form id="change-password">
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" name="passwords[old]" id="sign-in-email">
+                      <label class="mdl-textfield__label" for="sign-in-email">Old Password</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="password" name="passwords[new]" id="sign-in-password">
+                      <label class="mdl-textfield__label" for="sign-in-password">New Password</label>
+                    </div>
+                    <button type="submit" name="submit" class="my-button form-button mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                      Change Password
+                    </button>
+
+                </form>
+                <div class="my-form-footer">
+                  <p>Your security is totally a priority</p>
+                </div>
+              </div>
+            <!-- End of Change Password -->
+
           </div>
         </main>
       </div>
