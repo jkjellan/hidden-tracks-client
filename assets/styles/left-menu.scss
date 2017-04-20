@@ -29,6 +29,7 @@
 // sets user-logged-in text color
 .my-avatar-dropdown span {
   color: $secondary;
+  font-size: 14px !important;
 }
 
 // sets color of log-out/change-password dropdown.  'color' sets inset triangle color
@@ -59,6 +60,6 @@ div.mdl-layout__drawer button:hover {
 // sets color, size, and alignment of text to the right of menu icons.
 .my-navigation .mdl-navigation__link {
   font-size: 18px;
-  color: $color-text-dark !important;
+  color: $secondary-light !important;
   padding-left: 25px !important;
 }

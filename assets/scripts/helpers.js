@@ -2,16 +2,11 @@
 
 // function to hide all views except the one you want to show
 const showView = function (viewName) {
-  function showView (viewName) {
-    $('.view').hide()
-    $('#' + viewName).show()
-  }
+  $('.view').hide()
 
-  $('[data-launch-view]').on('click', function (e) {
-    e.preventDefault()
-    const viewName = $(this.attr('data-launch-view'))
-    showView(viewName)
-  })
+  for (let i = 0; i < viewName.length; i++) {
+    $('#' + viewName[i]).show()
+  }
 }
 
 module.exports = {

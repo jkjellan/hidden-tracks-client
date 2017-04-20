@@ -19,60 +19,61 @@
     </head>
     <body>
       <div class="my-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="view my-header mdl-layout__header">
-          <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title"></span>
-            <div class="mdl-layout-spacer"></div>
-            <div class="my-expand-search mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-              <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-                <i class="material-icons">search</i>
-              </label>
-              <div class="mdl-textfield__expandable-holder">
-                <input class="mdl-textfield__input" type="text" id="search">
-                <label class="mdl-textfield__label" for="search">Enter your query...</label>
-              </div>
-            </div>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
-              <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-              <li class="mdl-menu__item">About Hidden Tracks</li>
-            </ul>
-          </div>
-        </header>
-
-        <!-- Start of side navigration drawer -->
-        <div class="view mdl-layout__drawer">
-          <header class="my-drawer-header">
-            <div class="my-avatar-dropdown">
-              <span>jkjellan@gmail.com</span>
+        <!--start of header -->
+          <header id="header-view" class="view my-header mdl-layout__header">
+            <div class="mdl-layout__header-row">
+              <span class="mdl-layout-title"></span>
               <div class="mdl-layout-spacer"></div>
-              <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                <i class="material-icons" role="presentation">arrow_drop_down</i>
-                <span class="visuallyhidden">Accounts</span>
+              <div class="my-expand-search mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                  <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                  <input class="mdl-textfield__input" type="text" id="search">
+                  <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                </div>
+              </div>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+                <i class="material-icons">more_vert</i>
               </button>
-              <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                <li class="mdl-menu__item">Log Out</li>
-                <li class="mdl-menu__item">Change Password</li>
+              <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+                <li class="mdl-menu__item">About Hidden Tracks</li>
               </ul>
             </div>
           </header>
 
-                <!-- navigation inside side drawer -->
-          <nav class="my-navigation mdl-navigation">
-            <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">queue_music</i>My Music</a>
-            <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">filter_list</i>Contests</a>
-            <div class="mdl-layout-spacer"></div>
-            <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
-          </nav>
-        </div>
+          <!-- Start of side navigration drawer -->
+          <div id="drawer-view" class="view mdl-layout__drawer">
+            <header class="my-drawer-header">
+              <div class="my-avatar-dropdown">
+                <span id="user-signed-in">jkjellan@gmail.com</span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                  <i class="material-icons" role="presentation">arrow_drop_down</i>
+                  <span class="visuallyhidden">Accounts</span>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                  <li id='sign-out' class="mdl-menu__item">Log Out</li>
+                  <li id='change-password-redirect' class="mdl-menu__item">Change Password</li>
+                </ul>
+              </div>
+            </header>
+
+                  <!-- elements inside side drawer -->
+            <nav class="my-navigation mdl-navigation">
+              <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">queue_music</i>My Music</a>
+              <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">filter_list</i>Contests</a>
+              <div class="mdl-layout-spacer"></div>
+              <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+            </nav>
+          </div>
         <!-- End of side navigration drawer -->
 
       <!-- Start of main content area i.e auth forms and application content -->
       <main class="mdl-layout__content">
 
             <!-- Sign in form-->
-            <div id="sign-in-wrapper" class="view my-auth-card mdl-card mdl-shadow--6dp">
+            <div id="sign-in-view" class="view my-auth-card mdl-card mdl-shadow--6dp">
               <div class="my-form-header mdl-card__title">
                 <h2 class="mdl-card__title-text">Sign In</h2>
               </div>
@@ -101,7 +102,7 @@
 
 
             <!-- Sign Up form-->
-            <div id="sign-up-wrapper" class="view my-auth-card mdl-card mdl-shadow--6dp">
+            <div id="sign-up-view" class="view my-auth-card mdl-card mdl-shadow--6dp">
               <div class="my-form-header mdl-card__title">
                 <h2 class="mdl-card__title-text">Create Account</h2>
               </div>
@@ -131,14 +132,14 @@
             <!-- End of Sign-Up -->
 
             <!-- Change Password Form-->
-            <div id="change-password-wrapper" class="view my-auth-card mdl-card mdl-shadow--6dp">
+            <div id="change-password-view" class="view my-auth-card mdl-card mdl-shadow--6dp">
               <div class="my-form-header mdl-card__title">
                 <h2 class="mdl-card__title-text">Change Password</h2>
               </div>
                 <form id="change-password">
 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                      <input class="mdl-textfield__input" type="text" name="passwords[old]" id="sign-in-email">
+                      <input class="mdl-textfield__input" type="password" name="passwords[old]" id="sign-in-email">
                       <label class="mdl-textfield__label" for="sign-in-email">Old Password</label>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
