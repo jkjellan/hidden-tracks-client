@@ -1,1 +1,1 @@
-'use static'
+'use strict'

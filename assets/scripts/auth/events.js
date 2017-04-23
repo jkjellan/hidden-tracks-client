@@ -50,7 +50,11 @@ const redirectToSignIn = function (event) {
 }
 
 const redirectToChangePassword = function (event) {
-  helpers.showView(['change-password-view', 'drawer-view', 'header-view'])
+  helpers.showView(['content-grid-view', 'change-password-view', 'drawer-view', 'header-view'])
+}
+
+const exitChangePassword = function (event) {
+  helpers.showView(['content-grid-view', 'drawer-view', 'header-view'])
 }
 
 const addHandlers = () => {
@@ -61,6 +65,7 @@ const addHandlers = () => {
   $('#sign-up-redirect').on('click', redirectToSignUp)
   $('#sign-in-redirect').on('click', redirectToSignIn)
   $('#change-password-redirect').on('click', redirectToChangePassword)
+  $('#exit-change-password').on('click', exitChangePassword)
 }
 
 module.exports = {

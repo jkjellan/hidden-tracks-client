@@ -1,1 +1,7 @@
+// Sets container of playlist and contest to 100% of window, so that playlist
+// and contest areas extend to bottom of screen even if there are not songs
+// in the playlist etc.
 
+div#content-grid-view.view.mdl-grid {
+  height: 100%;
+}
