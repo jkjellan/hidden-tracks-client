@@ -8,6 +8,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import 'forms';
 @import 'typography';
 @import 'body';
+@import 'playlist';
+@import 'mdl-grid';
+@import 'contest';
 
 // Over-writes Material Design Lite defaults
 $default-item-hover-bg-color: $secondary;
@@ -17,5 +20,10 @@ $button-primary-color: $secondary;
 $input-text-bottom-border-color: $primary-light;
 $input-text-highlight-color: $secondary;
 $input-text-label-color: $color-text-dark;
+
+// over-write margins
+$grid-desktop-margin: 4px;
+$grid-tablet-margin: 4px;
+$grid-phone-margin: 4px;
 
 @import '~material-design-lite/src/material-design-lite';

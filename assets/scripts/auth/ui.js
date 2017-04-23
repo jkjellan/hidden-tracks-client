@@ -16,7 +16,7 @@ const signUpFailure = (error) => {
 const signInSuccess = (ajaxResponse) => {
   console.log('sign in success', ajaxResponse.user)
   store.user = ajaxResponse.user
-  helpers.showView(['drawer-view', 'header-view'])
+  helpers.showView(['drawer-view', 'header-view', 'content-grid-view'])
   selectors.sideDrawer.userSignedIn.html(store.user.email)
 }
 

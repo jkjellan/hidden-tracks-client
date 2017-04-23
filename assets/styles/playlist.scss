@@ -1,0 +1,19 @@
+.my-playlist-wrapper {
+  // overflow-y: scroll;
+  // height: 100% !important;
+  background: $background-dark;
+  padding: 5px !important;
+}
+
+.my-playlist-wrapper .mdl-card__title {
+  background: $background-mid !important;
+  color: $white !important;
+}
+
+.my-song-card {
+  background: $background-mid !important;
+}
+
+.mdl-card__actions .mdl-button {
+  background: $primary !important;
+}
