@@ -17,3 +17,42 @@
 .mdl-card__actions .mdl-button {
   background: $primary !important;
 }
+.mdl-card__actions .mdl-button:hover {
+  background: $primary-light !important;
+}
+
+// Centers Add Song button and sets background color behind button
+.my-new-song-card {
+  background: $secondary !important;
+  text-align: center !important;
+  padding: 5px !important;
+}
+
+// Sets color of Add New Song button
+.my-new-song-card button{
+  background: $primary;
+  text-align: center;
+  cursor: pointer;
+}
+.my-new-song-card button:hover{
+  background: $primary-light;
+  font-size: 10px !important;
+}
+
+
+
+// Sets size, color and alignment of Add New Song text
+// .my-new-song-card .mdl-navigation__link {
+//   font-size: 20px !important;
+//   padding: 2px 10px 2px 15px !important;
+//   background: $background-mid;
+//   color: $white;
+// }
+
+// Sets size color and alignment of Add New Song ICON
+// .my-new-song-card .mdl-navigation__link .material-icons {
+//   font-size: 50px !important;
+//   padding-left: 0px !important;
+//   margin-right: 15px !important;
+//   color: $primary !important;
+// }
