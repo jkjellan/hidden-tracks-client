@@ -13,7 +13,7 @@ const renderPlaylist = function (songs) {
     const artist = songs[i].artist_name
     const url = songs[i].song_url
 
-    $('#insert-songs-here').append(injectHtml.html.songHtml)
+    $('#insert-songs-here').append(injectHtml.songHtml(title, artist, url))
   }
 }
 
