@@ -22,13 +22,6 @@ const onNewSong = function (event) {
     .catch(ui.newSongFailure)
 }
 
-const onGetSongs = () => {
-  console.log('in onGetSongs')
-  api.getSongs()
-    .then(ui.getSongsSuccess)
-    .catch(ui.getSongsFailure)
-}
-
 const addSong = function (event) {
   console.log('clicked add song')
   helpers.showView(['content-grid-view', 'add-song-view', 'drawer-view', 'header-view'])
@@ -45,7 +38,25 @@ const addHandlers = () => {
   $('#add-song').on('submit', onNewSong)
 }
 
+const onGetSongs = () => {
+  // needed locally because onGetSongs is called from newSongSuccess in app ui
+  const api = require('./api')
+  console.log('in onGetSongs')
+  api.getSongs()
+    .then(ui.getSongsSuccess)
+    .catch(ui.getSongsFailure)
+}
+
+const onDeleteSong = (id) => {
+  event.preventDefault()
+
+  api.deleteSong(id)
+    .then(ui.deleteSongSuccess)
+    .catch(ui.deleteSongFailure)
+}
+
 module.exports = {
   addHandlers,
-  onGetSongs
+  onGetSongs,
+  onDeleteSong
 }

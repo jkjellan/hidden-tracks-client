@@ -3,6 +3,7 @@
 const store = require('../store')
 const helpers = require('../helpers')
 const selectors = require('./selectors')
+const appEvents = require('../app/events')
 
 const signUpSuccess = (ajaxResponse) => {
   console.log('sign up Success')
@@ -18,6 +19,7 @@ const signInSuccess = (ajaxResponse) => {
   store.user = ajaxResponse.user
   helpers.showView(['drawer-view', 'header-view', 'content-grid-view'])
   selectors.sideDrawer.userSignedIn.html(store.user.email)
+  appEvents.onGetSongs()
 }
 
 const signInFailure = (error) => {

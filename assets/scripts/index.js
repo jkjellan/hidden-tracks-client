@@ -16,7 +16,6 @@ $(() => {
   helpers.showView(['sign-in-view'])
   authEvents.addHandlers()
   appEvents.addHandlers()
-  appEvents.onGetSongs()
 })
 
 // use require with a reference to bundle the file and use it in this file
