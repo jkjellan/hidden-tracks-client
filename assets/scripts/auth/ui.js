@@ -40,7 +40,7 @@ const changePasswordSuccess = () => {
   console.log('change password success, nothing was returned')
   // is it necessary to clear out user store?
   // store.user = null
-  helpers.showView(['drawer-view', 'header-view'])
+  helpers.showView(['drawer-view', 'header-view', 'content-grid-view'])
 }
 
 const changePasswordFailure = (error) => {
