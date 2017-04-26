@@ -15,9 +15,22 @@ const newSong = (data) => {
   })
 }
 
-const deleteSong = (id) => {
+const editSong = (data) => {
+  const songId = store.id
+  console.log(data)
   return $.ajax({
-    url: config.apiOrigin + '/songs/' + id,
+    url: config.apiOrigin + '/songs/' + songId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const deleteSong = () => {
+  return $.ajax({
+    url: config.apiOrigin + '/songs/' + store.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -38,5 +51,6 @@ const getSongs = () => {
 module.exports = {
   newSong,
   getSongs,
-  deleteSong
+  deleteSong,
+  editSong
 }

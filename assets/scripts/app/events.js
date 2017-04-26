@@ -4,6 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const helpers = require('../helpers')
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
 
 const onNewSong = function (event) {
   event.preventDefault()
@@ -24,18 +25,12 @@ const onNewSong = function (event) {
 
 const addSong = function (event) {
   console.log('clicked add song')
+  $('main').scrollTop(0)
   helpers.showView(['content-grid-view', 'add-song-view', 'drawer-view', 'header-view'])
 }
 
 const exitAddSong = function (event) {
   helpers.showView(['content-grid-view', 'drawer-view', 'header-view'])
-}
-
-const addHandlers = () => {
-  $('#add-song-form').on('click', addSong)
-  $('#exit-add-song').on('click', exitAddSong)
-
-  $('#add-song').on('submit', onNewSong)
 }
 
 const onGetSongs = () => {
@@ -47,12 +42,30 @@ const onGetSongs = () => {
     .catch(ui.getSongsFailure)
 }
 
-const onDeleteSong = (id) => {
+// onDeleteSong is being called from
+const onDeleteSong = () => {
   event.preventDefault()
 
-  api.deleteSong(id)
+  api.deleteSong(store.id)
     .then(ui.deleteSongSuccess)
     .catch(ui.deleteSongFailure)
+}
+
+const onEditSong = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log(data)
+  api.editSong(data)
+    .then(ui.editSongSuccess)
+    .catch(ui.editSongFailure)
+}
+
+const addHandlers = () => {
+  $('#add-song-form').on('click', addSong)
+  $('#exit-add-song').on('click', exitAddSong)
+  $('#exit-edit-song').on('click', exitAddSong)
+  $('#edit-song').on('submit', onEditSong)
+  $('#add-song').on('submit', onNewSong)
 }
 
 module.exports = {

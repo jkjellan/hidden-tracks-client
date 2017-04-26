@@ -209,6 +209,44 @@
                 <!-- End of Add Song -->
 
 
+                <!-- Edit Song Form-->
+                <div id="edit-song-view" class="view my-auth-card mdl-card mdl-shadow--6dp">
+                  <div class="my-form-header mdl-card__title">
+                    <div class="my-avatar-dropdown">
+                      <h2 class="mdl-card__title-text">Edit Song</h2>
+                      <div class="mdl-layout-spacer"></div>
+                      <button id="exit-edit-song" class="my-close-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                        <i class="material-icons" role="presentation">close</i>
+                        <span class="visuallyhidden">Accounts</span>
+                      </button>
+                    </div>
+                  </div>
+                    <form id="edit-song">
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" name="song[song_title]"  type="text" id="edit_song_title">
+                          <label class="mdl-textfield__label">Song Title</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" name="song[artist_name]" type="text" id="edit_artist_name">
+                          <label class="mdl-textfield__label">Artist Name</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" name="song[song_url]" type="text" id="edit_song_url">
+                          <label class="mdl-textfield__label">Youtube URL</label>
+                        </div>
+                        <button type="submit" name="submit" class="my-button form-button mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Edit Song
+                        </button>
+
+                    </form>
+                    <div class="my-form-footer">
+                      <p></p>
+                    </div>
+                  </div>
+                <!-- End of Edit Song -->
+
+
               </div>
 
               <!-- Start of User Playlist -->

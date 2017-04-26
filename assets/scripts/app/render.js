@@ -2,6 +2,8 @@
 
 const injectHtml = require('./html-to-inject')
 const appEvents = require('./events')
+const store = require('../store')
+const helpers = require('../helpers')
 
 // The YouTube embedded url is formatted differently from the browser url
 // so, I am parsing the browser url user will input when adding a new
@@ -39,7 +41,7 @@ const renderPlaylist = function (songs) {
     const title = songs[i].song_title
     const artist = songs[i].artist_name
     let url = songs[i].song_url
-    let id = songs[i].id
+    const id = songs[i].id
 
     // if user has alread included an embedded URL link from Youtube,
     // leave url as is, otherwise, parse it to build an embedded URL
@@ -51,8 +53,16 @@ const renderPlaylist = function (songs) {
     // refresh the DOM so MDL js is active for recently injected html elements
     componentHandler.upgradeDom()
   }
+  // attached click handlers to individual song actions
   $('.edit-song').on('click', (event) => {
     console.log('I can edit this song')
+    const songId = $(event.target).attr('data-id')
+    // storing song id, which will be used to in the AJAX DELETE request
+    // invoked below in onDeleteSong()
+    store.id = songId
+    // scrolls to top of screen so user sees form
+    $('main').scrollTop(0)
+    helpers.showView(['content-grid-view', 'edit-song-view', 'drawer-view', 'header-view'])
   })
   $('.delete-song').on('click', (event) => {
     console.log('I can delete this song')
@@ -60,8 +70,11 @@ const renderPlaylist = function (songs) {
     // passes data-id (which is set to the song id) of the song
     // the user is trying to delete
     const songId = $(event.target).attr('data-id')
-    console.log(appEvents.onDeleteSong)
-    appEvents.onDeleteSong(songId)
+    // storing song id, which will be used to in the AJAX DELETE request
+    // invoked below in onDeleteSong()
+    store.id = songId
+    console.log(store.id)
+    appEvents.onDeleteSong()
   })
 }
 

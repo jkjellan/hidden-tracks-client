@@ -44,11 +44,27 @@ const getSongsFailure = (error) => {
   console.error(error)
 }
 
+const editSongSuccess = (ajaxResponse) => {
+  const appEvents = require('./events')
+  console.log('Edit Song Success')
+  console.log(ajaxResponse)
+  store.song = ajaxResponse.song
+  console.log(store.song)
+  appEvents.onGetSongs()
+}
+
+const editSongFailure = (error) => {
+  console.log('Edit Song error')
+  console.error(error)
+}
+
 module.exports = {
   newSongSuccess,
   newSongFailure,
   getSongsSuccess,
   getSongsFailure,
   deleteSongSuccess,
-  deleteSongFailure
+  deleteSongFailure,
+  editSongSuccess,
+  editSongFailure
 }
