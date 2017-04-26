@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://hiddentracks.herokuapp.com'
+    production: 'https://hiddentracks.herokuapp.com/'
   }
 }
 
