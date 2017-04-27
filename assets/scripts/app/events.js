@@ -71,8 +71,7 @@ const onSearch = function (e) {
       q: encodeURIComponent(search).replace(/%20/g, '+'),
       part: 'snippet',
       type: 'video',
-      maxReults: 10,
-      order: 'viewCount'
+      order: 'relevance'
     })
 
     request.execute(function (response) {
@@ -82,7 +81,7 @@ const onSearch = function (e) {
       // $('#search-results').html('<pre>' + str + '</pre>')
       const result = response.result
       store.search = result
-
+      console.log('about to display search results')
       search.displaySearch()
     })
   }

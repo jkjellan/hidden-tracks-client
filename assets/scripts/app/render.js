@@ -78,6 +78,33 @@ const renderPlaylist = function (songs) {
   })
 }
 
+const renderSearchResults = function () {
+  // renderPlaylist needs on deleteSong function from appEvents, and so I must require
+  // appEvents in the local scope, as renderPlaylist is itself
+  // exported and called from various parts of the application
+
+  $('#insert-search-results-here').html('')
+  console.log('rendering search results, yo')
+  console.log(store.search)
+  const songs = store.search
+  for (let i = 0; i < songs.items.length; i++) {
+    console.log('in render function')
+    console.log(songs.items[i])
+    const title = songs.items[i].snippet.title
+    let url = songs.items[i].id.videoId
+
+    const youtube = 'https://www.youtube.com/embed/'
+
+    url = youtube + url
+
+    // instert song html with song variables interpolated
+    $('#insert-search-results-here').append(injectHtml.searchHtml(title, url))
+    // refresh the DOM so MDL js is active for recently injected html elements
+    componentHandler.upgradeDom()
+  }
+}
+
 module.exports = {
-  renderPlaylist
+  renderPlaylist,
+  renderSearchResults
 }
