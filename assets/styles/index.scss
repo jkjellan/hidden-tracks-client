@@ -1,6 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import '../mdl/material-design-lite/src/color-definitions';
+@import '~material-design-lite/src/color-definitions';
 
 @import 'colors';
 @import 'header';
@@ -26,4 +26,4 @@ $grid-desktop-margin: 4px;
 $grid-tablet-margin: 4px;
 $grid-phone-margin: 4px;
 
-@import '../mdl/material-design-lite/src/material-design-lite';
+@import '~material-design-lite/src/material-design-lite';
