@@ -3,8 +3,10 @@
     <head>
       <title>Hidden Tracks</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
+
       <!-- for google site verification for Youtube API-->
       <meta name="google-site-verification" content="N6pJQ5H0x9Ey0ndX9K6fETSStbLknnVqmEbom0RPFWA" />
+
       <!-- google fonts used in css -->
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -15,16 +17,15 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 
-      <!-- testing Youtube API -->
-      <script src="https://apis.google.com/js/api.js"></script>
     </head>
-    <body>
+    <body style="height:100%">
       <div class="my-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <!--start of header -->
           <header id="header-view" class="view my-header mdl-layout__header">
             <div class="mdl-layout__header-row">
               <span class="mdl-layout-title"></span>
               <div class="mdl-layout-spacer"></div>
+              <form>
               <div class="my-expand-search mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                 <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
                   <i class="material-icons">search</i>
@@ -34,6 +35,7 @@
                   <label class="mdl-textfield__label" for="search">Enter your query...</label>
                 </div>
               </div>
+            </form>
               <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
                 <i class="material-icons">more_vert</i>
               </button>
@@ -70,8 +72,8 @@
           </div>
         <!-- End of side navigration drawer -->
 
-      <!-- Start of main content area i.e auth forms and application content -->
-      <main style="height:100%" class="mdl-layout__content">
+          <!-- Start of main content area i.e auth forms and application content -->
+          <main style="height:100%" class="mdl-layout__content">
 
             <!-- Sign in form-->
             <div id="sign-in-view" class="view my-auth-card mdl-card mdl-shadow--6dp">
@@ -261,15 +263,17 @@
                   </button>
                 </div>
 
-                <div id="insert-songs-here">
+                <div id="insert-songs-here"></div>
 
-                </div>
               </div>
               <!-- End of User Playlist -->
 
             </div>
-          </div>
-        </main>
+          </main>
       </div>
+      <!-- YouTube API -->
+      <script src="assets/scripts/app/youtube.js"></script>
+      <script src="https://apis.google.com/js/client.js?onload=init"></script>
+
     </body>
 </html>

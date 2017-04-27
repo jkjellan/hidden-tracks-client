@@ -60,12 +60,42 @@ const onEditSong = function (event) {
     .catch(ui.editSongFailure)
 }
 
+const onSearch = function (e) {
+  if (!e) { e = window.event }
+  if (e.keyCode === 13) {
+    e.preventDefault()
+    const search = $(e.target).val()
+    $(e.target).val('')
+    console.log(search)
+    let request = gapi.client.youtube.search.list({
+      q: encodeURIComponent(search).replace(/%20/g, '+'),
+      part: 'snippet',
+      type: 'video',
+      maxReults: 10,
+      order: 'viewCount'
+    })
+
+    request.execute(function (response) {
+      // need a better spot for this function declaration
+      const search = require('./search')
+      // let str = JSON.stringify(response.result)
+      // $('#search-results').html('<pre>' + str + '</pre>')
+      const result = response.result
+      store.search = result
+
+      search.displaySearch()
+    })
+  }
+}
+
 const addHandlers = () => {
   $('#add-song-form').on('click', addSong)
   $('#exit-add-song').on('click', exitAddSong)
   $('#exit-edit-song').on('click', exitAddSong)
   $('#edit-song').on('submit', onEditSong)
   $('#add-song').on('submit', onNewSong)
+
+  $('#search').on('keydown', onSearch)
 }
 
 module.exports = {
