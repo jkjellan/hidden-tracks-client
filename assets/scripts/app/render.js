@@ -99,10 +99,17 @@ const renderSearchResults = function () {
 
     // instert song html with song variables interpolated
     $('#insert-search-results-here').append(injectHtml.searchHtml(title, url))
-
-    // refresh the DOM so MDL js is active for recently injected html elements
-    componentHandler.upgradeDom()
   }
+  // attached add song handlers to each search result so they can be added to playlist
+  $('.add-search-song').on('click', (event) => {
+    console.log('I can add this song')
+    const url = $(event.target).parent().parent().parent().find('.url-class').attr('src')
+    console.log(url)
+    const title = $(event.target).parent().parent().parent().find('.my-search-title').text()
+    console.log(title)
+  })
+  // refresh the DOM so MDL js is active for recently injected html elements
+  componentHandler.upgradeDom()
 }
 
 module.exports = {

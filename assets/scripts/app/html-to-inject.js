@@ -42,10 +42,10 @@ const searchHtml = (title, url) => {
     "</div>" +
 
     "<div class=' mdl-cell--middle mdl-card__media'>" +
-      `<iframe width='auto' height='auto' src='${url}' frameborder='0'></iframe>` +
+      `<iframe class='url-class' width='auto' height='auto' src='${url}' frameborder='0'></iframe>` +
     "</div>" +
     "<div class='mdl-card__actions'>" +
-      `<button id='button1' class='mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon'>` +
+      `<button id='button1' class='add-search-song mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon'>` +
         "<i class='material-icons' role='presentation'>add</i>" +
       "</button>" +
     "</div>" +
