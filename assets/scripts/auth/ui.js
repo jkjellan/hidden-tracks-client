@@ -8,10 +8,13 @@ const appEvents = require('../app/events')
 const signUpSuccess = (ajaxResponse) => {
   console.log('sign up Success')
   helpers.showView(['sign-in-view'])
+  helpers.showAlert($('#sign-in-success-message'))
 }
 
 const signUpFailure = (error) => {
   console.error(error)
+  console.log('sign up failure')
+  helpers.showAlert($('#sign-up-failure-message'))
 }
 
 const signInSuccess = (ajaxResponse) => {
@@ -24,6 +27,7 @@ const signInSuccess = (ajaxResponse) => {
 
 const signInFailure = (error) => {
   console.error(error)
+  helpers.showAlert($('#sign-in-failure-message'))
 }
 
 const signOutSuccess = () => {
@@ -45,6 +49,7 @@ const changePasswordSuccess = () => {
 
 const changePasswordFailure = (error) => {
   console.error(error)
+  helpers.showAlert($('#change-password-failure-message'))
 }
 
 module.exports = {

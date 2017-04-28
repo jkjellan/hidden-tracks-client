@@ -11,6 +11,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import 'playlist';
 @import 'mdl-grid';
 @import 'contest';
+@import 'alerts';
 
 // Over-writes Material Design Lite defaults
 $default-item-hover-bg-color: $secondary;

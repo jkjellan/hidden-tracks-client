@@ -50,6 +50,7 @@ const redirectToSignIn = function (event) {
 }
 
 const redirectToChangePassword = function (event) {
+  $('#insert-search-results-here').html('')
   helpers.showView(['content-grid-view', 'change-password-view', 'drawer-view', 'header-view'])
 }
 
