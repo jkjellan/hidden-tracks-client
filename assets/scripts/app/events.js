@@ -63,7 +63,7 @@ const onEditSong = function (event) {
 function youtubeApiCall (query) {
   const search = require('./search')
 
-  const base = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCbVcF-CQLSKJIrAtwywxY9Uw8lcrggE30&part=snippet&maxResults=6&q='
+  const base = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCbVcF-CQLSKJIrAtwywxY9Uw8lcrggE30&part=snippet&maxResults=6&videoEmbeddable=true&type=video&q='
   const q = query
   const url = base + q
   console.log('first line of youtubeApicall')

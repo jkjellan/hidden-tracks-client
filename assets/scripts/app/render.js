@@ -78,6 +78,14 @@ const renderPlaylist = function (songs) {
   })
 }
 
+const submitAddSongForm = function (url, title) {
+  console.log('in submitAddSongForm')
+  $('#song_title').val(title)
+  $('#artist_name').val('')
+  $('#song_url').val(url)
+  $('#add-song').submit()
+}
+
 const renderSearchResults = function () {
   // renderPlaylist needs on deleteSong function from appEvents, and so I must require
   // appEvents in the local scope, as renderPlaylist is itself
@@ -107,6 +115,7 @@ const renderSearchResults = function () {
     console.log(url)
     const title = $(event.target).parent().parent().parent().find('.my-search-title').text()
     console.log(title)
+    submitAddSongForm(url, title)
   })
   // refresh the DOM so MDL js is active for recently injected html elements
   componentHandler.upgradeDom()
