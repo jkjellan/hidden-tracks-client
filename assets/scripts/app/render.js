@@ -99,6 +99,7 @@ const renderSearchResults = function () {
 
     // instert song html with song variables interpolated
     $('#insert-search-results-here').append(injectHtml.searchHtml(title, url))
+
     // refresh the DOM so MDL js is active for recently injected html elements
     componentHandler.upgradeDom()
   }

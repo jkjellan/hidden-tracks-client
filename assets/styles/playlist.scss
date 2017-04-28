@@ -10,8 +10,10 @@
   color: $white !important;
 }
 
+// set background color and margin between song cards
 .my-song-card {
   background: $background-mid !important;
+  margin-bottom: 15px !important;
 }
 
 .mdl-card__actions .mdl-button {
@@ -43,6 +45,10 @@ div.mdl-card__title {
   flex-grow: 1;
 }
 
+// sets color of icon on dropdown on each song card
+.my-playlist-wrapper .mdl-button {
+  color: white !important;
+}
 
 // Sets size, color and alignment of Add New Song text
 // .my-new-song-card .mdl-navigation__link {

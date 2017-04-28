@@ -71,7 +71,8 @@ const onSearch = function (e) {
       q: encodeURIComponent(search).replace(/%20/g, '+'),
       part: 'snippet',
       type: 'video',
-      order: 'relevance'
+      order: 'relevance',
+      maxResults: 6
     })
 
     request.execute(function (response) {

@@ -1,5 +1,30 @@
 .my-contest-wrapper {
   overflow-y: scroll;
-  background: $background-dark;
+  background: $background-mid;
   padding: 5px !important;
+}
+
+.my-search-card {
+  background: $background-dark !important;
+  float:left;
+}
+
+// makes it so title of search result songs stays on one line,
+// so every cards stays same size, and
+// float left doesn't result on weird behavior
+div.my-search-title.mdl-card__title {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  color: $white !important;
+}
+
+div.search-results-header {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  padding: 20px 0 20px 0 !important;
+}
+
+.my-contest-wrapper .mdl-button {
+  color: white !important;
 }
