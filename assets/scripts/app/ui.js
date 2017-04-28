@@ -45,6 +45,7 @@ const getSongsFailure = (error) => {
 }
 
 const editSongSuccess = (ajaxResponse) => {
+  helpers.showView(['content-grid-view', 'drawer-view', 'header-view'])
   const appEvents = require('./events')
   console.log('Edit Song Success')
   console.log(ajaxResponse)

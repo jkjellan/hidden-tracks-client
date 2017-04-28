@@ -28,3 +28,12 @@ div.search-results-header {
 .my-contest-wrapper .mdl-button {
   color: white !important;
 }
+
+// sets color and position of button that clears search results
+.my-clear-button {
+  float: right;
+  top: -6px !important;
+}
+.my-clear-button:hover {
+
+}

@@ -55,6 +55,9 @@ const renderPlaylist = function (songs) {
   }
   // attached click handlers to individual song actions
   $('.edit-song').on('click', (event) => {
+    // clears search results before displaying edit song form, because
+    // they are in the same container
+    $('#insert-search-results-here').html('')
     console.log('I can edit this song')
     const songId = $(event.target).attr('data-id')
     // storing song id, which will be used to in the AJAX DELETE request

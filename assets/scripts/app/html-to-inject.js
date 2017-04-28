@@ -6,10 +6,10 @@ const songHtml = (title, artist, url, id) => {
     "<div class='my-avatar-dropdown'>" +
       `<div class='mdl-card__title'>${artist} - ${title}` +
         "<div class='mdl-layout-spacer'></div>" +
-        "<button id='exit-add-song' class='my-close-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon'>" +
-        "<i class='material-icons' role='presentation'>close</i>" +
-        "<span class='visuallyhidden'>Accounts</span>" +
-        "</button>" +
+        // "<button id='exit-add-song' class='my-close-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon'>" +
+        // "<i class='material-icons' role='presentation'>close</i>" +
+        // "<span class='visuallyhidden'>Accounts</span>" +
+        // "</button>" +
       "</div>" +
     "</div>" +
 

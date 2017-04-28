@@ -111,6 +111,11 @@ const onSearch = function (e) {
   }
 }
 
+const onClearSearch = function () {
+  console.log('clearing search results')
+  $('#insert-search-results-here').html('')
+}
+
 const addHandlers = () => {
   $('#add-song-form').on('click', addSong)
   $('#exit-add-song').on('click', exitAddSong)
@@ -119,6 +124,7 @@ const addHandlers = () => {
   $('#add-song').on('submit', onNewSong)
 
   $('#search').on('keydown', onSearch)
+  $('#clear-search-results').on('click', onClearSearch)
 }
 
 module.exports = {
