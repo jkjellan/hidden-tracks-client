@@ -60,31 +60,54 @@ const onEditSong = function (event) {
     .catch(ui.editSongFailure)
 }
 
+function youtubeApiCall (query) {
+  const search = require('./search')
+
+  const base = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCbVcF-CQLSKJIrAtwywxY9Uw8lcrggE30&part=snippet&maxResults=6&q='
+  const q = query
+  const url = base + q
+  console.log('first line of youtubeApicall')
+  $.ajax({
+    cache: false,
+    dataType: 'json',
+    type: 'GET',
+    timeout: 5000,
+    url: url
+  })
+  .done(function (data) {
+    console.log(data)
+    console.log('in .done of AJAX')
+    store.search = data
+    search.displaySearch()
+  })
+}
+
 const onSearch = function (e) {
   if (!e) { e = window.event }
   if (e.keyCode === 13) {
     e.preventDefault()
-    const search = $(e.target).val()
+    const query = $(e.target).val()
     $(e.target).val('')
-    console.log(search)
-    let request = gapi.client.youtube.search.list({
-      q: encodeURIComponent(search).replace(/%20/g, '+'),
-      part: 'snippet',
-      type: 'video',
-      order: 'relevance',
-      maxResults: 6
-    })
-
-    request.execute(function (response) {
-      // need a better spot for this function declaration
-      const search = require('./search')
-      // let str = JSON.stringify(response.result)
-      // $('#search-results').html('<pre>' + str + '</pre>')
-      const result = response.result
-      store.search = result
-      console.log('about to display search results')
-      search.displaySearch()
-    })
+    console.log(query)
+    youtubeApiCall(query)
+    // let request = gapi.client.youtube.search.list({
+    //   q: encodeURIComponent(search).replace(/%20/g, '+'),
+    //   part: 'snippet',
+    //   type: 'video',
+    //   order: 'relevance',
+    //   maxResults: 6
+    // })
+    //
+    // request.execute(function (response) {
+    //   // need a better spot for this function declaration
+    //   const search = require('./search')
+    //   // let str = JSON.stringify(response.result)
+    //   // $('#search-results').html('<pre>' + str + '</pre>')
+    //   const result = response.result
+    //   store.search = result
+    //   console.log('about to display search results')
+    //   search.displaySearch()
+    // })
   }
 }
 
