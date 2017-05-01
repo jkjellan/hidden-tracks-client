@@ -86,6 +86,8 @@ const onSearch = function (e) {
   if (!e) { e = window.event }
   if (e.keyCode === 13) {
     e.preventDefault()
+    // hides any open forms when searching (i.e. changre password form or edit song form)
+    helpers.showView(['content-grid-view', 'drawer-view', 'header-view'])
     const query = $(e.target).val()
     $(e.target).val('')
     console.log(query)
