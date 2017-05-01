@@ -19,7 +19,7 @@
 
     </head>
     <body style="height:100%">
-      <div class="my-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <div id="my-layout" class="my-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <!--start of header -->
           <header id="header-view" class="view my-header mdl-layout__header">
             <div class="mdl-layout__header-row">
@@ -64,10 +64,10 @@
 
                   <!-- elements inside side drawer -->
             <nav class="my-navigation mdl-navigation">
-              <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">queue_music</i>My Music</a>
-              <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">filter_list</i>Contests</a>
+              <a class="mdl-navigation__link" href="#"><i class="material-icons" role="presentation">queue_music</i>My Music</a>
+              <a class="mdl-navigation__link" href="#"><i class="material-icons" role="presentation">filter_list</i>Contests</a>
               <div class="mdl-layout-spacer"></div>
-              <a class="mdl-navigation__link" href=""><i class="material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+              <a class="mdl-navigation__link" href="#"><i class="material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
             </nav>
           </div>
         <!-- End of side navigration drawer -->
@@ -137,9 +137,11 @@
             <!-- End of Sign-Up -->
 
             <!-- Sign-up/in Messages-->
-            <div id="sign-up-failure-message" class="my-auth-alert alert alert-danger" role="alert">Problem signing in. Email already in use.</div>
-            <div id="sign-in-success-message" class="my-auth-alert alert alert-success" role="alert">Account created. Now sign in!</div>
-            <div id="sign-in-failure-message" class="my-auth-alert alert alert-danger" role="alert">Wrong password. Try again</div>
+            <div class="alert-wrapper">
+              <div id="sign-up-failure-message" class="my-auth-alert alert alert-danger" role="alert">Problem signing in. Email already in use.</div>
+              <div id="sign-in-success-message" class="my-auth-alert alert alert-success" role="alert">Account created. Now sign in!</div>
+              <div id="sign-in-failure-message" class="my-auth-alert alert alert-danger" role="alert">Wrong password. Try again</div>
+            </div>
             <!-- End of Form Messages -->
 
 
@@ -161,6 +163,7 @@
                 </div>
 
                 <!-- Change Password Form-->
+                <div class="pw-wrapper">
                 <div id="change-password-view" class="view my-auth-card mdl-card mdl-shadow--6dp">
                   <div class="my-form-header mdl-card__title">
                     <div class="my-avatar-dropdown">
@@ -191,6 +194,7 @@
                       <p>Your security is totally a priority</p>
                     </div>
                   </div>
+                </div>
                   <!-- End of Change Password -->
 
                   <!-- Change Password Messages-->

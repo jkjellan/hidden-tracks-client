@@ -47,6 +47,8 @@ const signOutSuccess = () => {
   store.user = null
   helpers.showView(['sign-in-view'])
   $('#insert-search-results-here').html('')
+  // toggles the material design drawer upon signing out
+  document.getElementById('my-layout').MaterialLayout.toggleDrawer()
 }
 
 const signOutFailure = (error) => {

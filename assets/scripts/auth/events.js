@@ -52,10 +52,15 @@ const redirectToSignIn = function (event) {
 const redirectToChangePassword = function (event) {
   $('#insert-search-results-here').html('')
   helpers.showView(['content-grid-view', 'change-password-view', 'drawer-view', 'header-view'])
+  // toggles the material design drawer upon selecting change pw
+  document.getElementById('my-layout').MaterialLayout.toggleDrawer()
 }
 
 const exitChangePassword = function (event) {
   helpers.showView(['content-grid-view', 'drawer-view', 'header-view'])
+
+  // clears form fields upon exiting
+  $('#change-password').find('input:text, input:password, select, textarea').val('')
 }
 
 const addHandlers = () => {

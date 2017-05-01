@@ -45,6 +45,9 @@ const getSongsFailure = (error) => {
 }
 
 const editSongSuccess = (ajaxResponse) => {
+  // clears out form fields upon submission
+  $('#edit-song').find('input:text, select, textarea').val('')
+
   helpers.showView(['content-grid-view', 'drawer-view', 'header-view'])
   const appEvents = require('./events')
   console.log('Edit Song Success')

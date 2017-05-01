@@ -30,6 +30,8 @@ const addSong = function (event) {
 }
 
 const exitAddSong = function (event) {
+  // clears form fields upon exiting
+  $('#edit-song').find('input:text, input:password, select, textarea').val('')
   helpers.showView(['content-grid-view', 'drawer-view', 'header-view'])
 }
 
