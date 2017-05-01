@@ -40,7 +40,7 @@
                 <i class="material-icons">more_vert</i>
               </button>
               <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-                <li class="mdl-menu__item">About Hidden Tracks</li>
+                <li id="about" class="mdl-menu__item">About Hidden Tracks</li>
               </ul>
             </div>
           </header>
@@ -65,9 +65,9 @@
                   <!-- elements inside side drawer -->
             <nav class="my-navigation mdl-navigation">
               <p id="my-music" class="mdl-navigation__link"><i class="material-icons" role="presentation">queue_music</i>My Music</p>
-              <p id="contests" class="mdl-navigation__link"><i class="material-icons" role="presentation">filter_list</i>Contests</p>
+              <p id="contests" class="mdl-navigation__link"><i class="material-icons" role="presentation">filter_list</i>Tournaments</p>
               <div class="mdl-layout-spacer"></div>
-              <p class="mdl-navigation__link"><i class="material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></p>
+              <p id="help" class="mdl-navigation__link"><i class="material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></p>
             </nav>
           </div>
         <!-- End of side navigration drawer -->
@@ -280,16 +280,43 @@
                 <div id="contest-view" class="view">
 
                   <div id="contest-results">
-                    <div class="contest-results-header">Under Construction
-
+                    <div class="contest-results-header">Tournament View
+                      <p>Coming soon...</p>
                     </div>
 
                     <div id="insert-contest-results-here"></div>
 
                   </div>
                 </div>
-
                 <!-- End of Contest Area -->
+
+                <!-- Start of Help Area-->
+                <div id="help-view" class="view">
+
+                  <div id="help-results">
+                    <div class="help-results-header">Need Help?
+                      <p>Coming soon...</p>
+                    </div>
+
+                    <div id="insert-help-results-here"></div>
+
+                  </div>
+                </div>
+                <!-- End of Help Area -->
+
+                <!-- Start of About Area-->
+                <div id="about-view" class="view">
+
+                  <div id="about-results">
+                    <div class="about-results-header">About Hidden Tracks
+                      <p>Wouldn't you like to know...</p>
+                    </div>
+
+                    <div id="insert-about-results-here"></div>
+
+                  </div>
+                </div>
+                <!-- End of About Area -->
 
 
               </div>

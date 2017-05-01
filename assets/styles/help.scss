@@ -1,4 +1,4 @@
-.my-contest-card {
+.my-help-card {
   background: $background-dark !important;
   float:left;
 }
@@ -6,13 +6,13 @@
 // makes it so title of contest result songs stays on one line,
 // so every cards stays same size, and
 // float left doesn't result on weird behavior
-div.my-contest-title.mdl-card__title {
+div.my-help-title.mdl-card__title {
   overflow: hidden !important;
   white-space: nowrap !important;
   color: $white !important;
 }
 
-div.contest-results-header {
+div.help-results-header {
   text-align: center;
   font-size: 30px;
   color: white;

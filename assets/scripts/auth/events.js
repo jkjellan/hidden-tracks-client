@@ -51,7 +51,7 @@ const redirectToSignIn = function (event) {
 
 const redirectToChangePassword = function (event) {
   $('#insert-search-results-here').html('')
-  helpers.showView(['content-grid-view', 'search-results', 'change-password-view', 'drawer-view', 'header-view'])
+  helpers.showView(['content-grid-view', 'change-password-view', 'drawer-view', 'header-view'])
   // toggles the material design drawer upon selecting change pw
   document.getElementById('my-layout').MaterialLayout.toggleDrawer()
 }
@@ -65,10 +65,21 @@ const exitChangePassword = function (event) {
 
 const myMusicView = function (event) {
   helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'search-results'])
+  document.getElementById('my-layout').MaterialLayout.toggleDrawer()
 }
 
 const myContestView = function (event) {
   helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'contest-view'])
+  document.getElementById('my-layout').MaterialLayout.toggleDrawer()
+}
+
+const myHelpView = function (event) {
+  helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'help-view'])
+  document.getElementById('my-layout').MaterialLayout.toggleDrawer()
+}
+
+const myAboutView = function (event) {
+  helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'about-view'])
 }
 
 const addHandlers = () => {
@@ -83,6 +94,8 @@ const addHandlers = () => {
 
   $('#my-music').on('click', myMusicView)
   $('#contests').on('click', myContestView)
+  $('#help').on('click', myHelpView)
+  $('#about').on('click', myAboutView)
 }
 
 module.exports = {
