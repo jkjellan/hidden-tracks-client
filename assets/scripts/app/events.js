@@ -26,13 +26,13 @@ const onNewSong = function (event) {
 const addSong = function (event) {
   console.log('clicked add song')
   $('main').scrollTop(0)
-  helpers.showView(['content-grid-view', 'add-song-view', 'drawer-view', 'header-view'])
+  helpers.showView(['content-grid-view', 'add-song-view', 'drawer-view', 'header-view', 'search-results'])
 }
 
 const exitAddSong = function (event) {
   // clears form fields upon exiting
   $('#edit-song').find('input:text, input:password, select, textarea').val('')
-  helpers.showView(['content-grid-view', 'drawer-view', 'header-view'])
+  helpers.showView(['content-grid-view', 'drawer-view', 'header-view', 'search-results'])
 }
 
 const onGetSongs = () => {
@@ -89,7 +89,7 @@ const onSearch = function (e) {
   if (e.keyCode === 13) {
     e.preventDefault()
     // hides any open forms when searching (i.e. changre password form or edit song form)
-    helpers.showView(['content-grid-view', 'drawer-view', 'header-view'])
+    helpers.showView(['content-grid-view', 'search-results', 'drawer-view', 'header-view'])
     const query = $(e.target).val()
     $(e.target).val('')
     console.log(query)

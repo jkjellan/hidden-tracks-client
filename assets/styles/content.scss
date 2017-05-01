@@ -1,0 +1,9 @@
+.my-content-wrapper {
+  overflow-y: scroll;
+  background: $background-mid;
+  padding: 5px !important;
+}
+
+.my-content-wrapper .mdl-button {
+  color: white !important;
+}

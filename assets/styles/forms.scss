@@ -2,18 +2,13 @@
 .my-auth-card {
   margin: 8% auto 1% auto;
 
+  // top: 0 !important;
   // I would like, eventually to have model float over content, in
   // center of page, but can't get it to work currently
   // position: relative !important;
   // z-index: 20 !important;
   // margin: auto !important;
   // top: 10% !important;
-}
-
-.pw-wrapper {
-  // position: absolute;
-  // left: 50% !important;
-
 }
 
 // adds padding around form for aesthetics

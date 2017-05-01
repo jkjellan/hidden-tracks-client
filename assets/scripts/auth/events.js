@@ -51,16 +51,24 @@ const redirectToSignIn = function (event) {
 
 const redirectToChangePassword = function (event) {
   $('#insert-search-results-here').html('')
-  helpers.showView(['content-grid-view', 'change-password-view', 'drawer-view', 'header-view'])
+  helpers.showView(['content-grid-view', 'search-results', 'change-password-view', 'drawer-view', 'header-view'])
   // toggles the material design drawer upon selecting change pw
   document.getElementById('my-layout').MaterialLayout.toggleDrawer()
 }
 
 const exitChangePassword = function (event) {
-  helpers.showView(['content-grid-view', 'drawer-view', 'header-view'])
+  helpers.showView(['content-grid-view', 'search-results', 'drawer-view', 'header-view'])
 
   // clears form fields upon exiting
   $('#change-password').find('input:text, input:password, select, textarea').val('')
+}
+
+const myMusicView = function (event) {
+  helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'search-results'])
+}
+
+const myContestView = function (event) {
+  helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'contest-view'])
 }
 
 const addHandlers = () => {
@@ -72,6 +80,9 @@ const addHandlers = () => {
   $('#sign-in-redirect').on('click', redirectToSignIn)
   $('#change-password-redirect').on('click', redirectToChangePassword)
   $('#exit-change-password').on('click', exitChangePassword)
+
+  $('#my-music').on('click', myMusicView)
+  $('#contests').on('click', myContestView)
 }
 
 module.exports = {

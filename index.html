@@ -64,10 +64,10 @@
 
                   <!-- elements inside side drawer -->
             <nav class="my-navigation mdl-navigation">
-              <a class="mdl-navigation__link" href="#"><i class="material-icons" role="presentation">queue_music</i>My Music</a>
-              <a class="mdl-navigation__link" href="#"><i class="material-icons" role="presentation">filter_list</i>Contests</a>
+              <p id="my-music" class="mdl-navigation__link"><i class="material-icons" role="presentation">queue_music</i>My Music</p>
+              <p id="contests" class="mdl-navigation__link"><i class="material-icons" role="presentation">filter_list</i>Contests</p>
               <div class="mdl-layout-spacer"></div>
-              <a class="mdl-navigation__link" href="#"><i class="material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+              <p class="mdl-navigation__link"><i class="material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></p>
             </nav>
           </div>
         <!-- End of side navigration drawer -->
@@ -147,9 +147,12 @@
 
             <!-- mdl content grid -->
             <div id="content-grid-view" class="view mdl-grid">
-              <div class="my-contest-wrapper mdl-cell mdl-cell--7-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 
-                <div id="search-results">
+
+              <!-- Start of Search Area -->
+              <div class="my-content-wrapper mdl-cell mdl-cell--7-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+
+                <div id="search-results" class="view">
                   <div class="search-results-header">Search To Add Songs
                     <button id='clear-search-results' class='my-clear-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon'>
                     <i class='material-icons' role='presentation'>close</i>
@@ -273,7 +276,25 @@
                 <!-- End of Edit Song -->
 
 
+                <!-- Start of Contest Area-->
+                <div id="contest-view" class="view">
+
+                  <div id="contest-results">
+                    <div class="contest-results-header">Under Construction
+
+                    </div>
+
+                    <div id="insert-contest-results-here"></div>
+
+                  </div>
+                </div>
+
+                <!-- End of Contest Area -->
+
+
               </div>
+              <!-- End of Search Area-->
+
 
               <!-- Start of User Playlist -->
               <div class="my-playlist-wrapper mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">

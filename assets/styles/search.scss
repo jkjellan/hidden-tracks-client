@@ -1,25 +1,25 @@
-.my-contest-card {
+.my-search-card {
   background: $background-dark !important;
   float:left;
 }
 
-// makes it so title of contest result songs stays on one line,
+// makes it so title of search result songs stays on one line,
 // so every cards stays same size, and
 // float left doesn't result on weird behavior
-div.my-contest-title.mdl-card__title {
+div.my-search-title.mdl-card__title {
   overflow: hidden !important;
   white-space: nowrap !important;
   color: $white !important;
 }
 
-div.contest-results-header {
+div.search-results-header {
   text-align: center;
   font-size: 30px;
   color: white;
   padding: 22px 0 27px 0 !important;
 }
 
-// sets color and position of button that clears contest results
+// sets color and position of button that clears search results
 .my-clear-button {
   float: right;
   top: -6px !important;

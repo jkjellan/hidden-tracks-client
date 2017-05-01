@@ -26,7 +26,7 @@ const signUpFailure = (error) => {
 const signInSuccess = (ajaxResponse) => {
   console.log('sign in success', ajaxResponse.user)
   store.user = ajaxResponse.user
-  helpers.showView(['drawer-view', 'header-view', 'content-grid-view'])
+  helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'search-results'])
   selectors.sideDrawer.userSignedIn.html(store.user.email)
   appEvents.onGetSongs()
 
@@ -59,7 +59,7 @@ const changePasswordSuccess = () => {
   console.log('change password success, nothing was returned')
   // is it necessary to clear out user store?
   // store.user = null
-  helpers.showView(['drawer-view', 'header-view', 'content-grid-view'])
+  helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'search-results'])
 
   // clears change-password form fields upon sign-in
   $('#change-password').find('input:password, select, textarea').val('')
