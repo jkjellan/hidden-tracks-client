@@ -36,20 +36,31 @@ const renderPlaylist = function (songs) {
   $('#insert-songs-here').html('')
   console.log('rendering playlist, yo')
   console.log(songs)
+
+  // sort songs by id so newly added songs are at top of playlist
+  songs.sort(function (a, b) {
+    return b.id - a.id
+  })
   for (let i = 0; i < songs.length; i++) {
     console.log(songs[i])
     const title = songs[i].song_title
     const artist = songs[i].artist_name
     let url = songs[i].song_url
     const id = songs[i].id
+    let delimiter = ''
 
+    // if there is no artist_name, don't include a delimiter, otherwise
+    // the title will look like this:  -title
+    if (artist !== '') {
+      delimiter = '-'
+    }
     // if user has alread included an embedded URL link from Youtube,
     // leave url as is, otherwise, parse it to build an embedded URL
     if (url.indexOf('embed') === -1) {
       url = parseUrl(url)
     }
     // instert song html with song variables interpolated
-    $('#insert-songs-here').append(injectHtml.songHtml(title, artist, url, id))
+    $('#insert-songs-here').append(injectHtml.songHtml(title, artist, url, id, delimiter))
     // refresh the DOM so MDL js is active for recently injected html elements
     componentHandler.upgradeDom()
   }
@@ -98,6 +109,7 @@ const renderSearchResults = function () {
   console.log('rendering search results, yo')
   console.log(store.search)
   const songs = store.search
+
   for (let i = 0; i < songs.items.length; i++) {
     console.log('in render function')
     console.log(songs.items[i])

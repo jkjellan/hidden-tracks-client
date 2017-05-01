@@ -1,10 +1,10 @@
 'use static'
 
-const songHtml = (title, artist, url, id) => {
+const songHtml = (title, artist, url, id, delimiter) => {
   const songHtml =
   `<div class='my-song-card mdl-cell--middle mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp'>` +
     "<div class='my-avatar-dropdown'>" +
-      `<div class='mdl-card__title'>${artist} - ${title}` +
+      `<div class='mdl-card__title'>${artist} ${delimiter} ${title}` +
         "<div class='mdl-layout-spacer'></div>" +
         // "<button id='exit-add-song' class='my-close-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon'>" +
         // "<i class='material-icons' role='presentation'>close</i>" +

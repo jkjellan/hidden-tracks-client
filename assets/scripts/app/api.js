@@ -4,7 +4,7 @@ const store = require('../store')
 
 const newSong = (data) => {
   data.song.user_id = store.user.id
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/songs',
     method: 'POST',
@@ -17,7 +17,7 @@ const newSong = (data) => {
 
 const editSong = (data) => {
   const songId = store.id
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/songs/' + songId,
     method: 'PATCH',
