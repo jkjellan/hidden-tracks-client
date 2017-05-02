@@ -1,5 +1,8 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
+## Hidden-Tracks-API Repo
+[hidden-tracks-api](https://github.com/jkjellan/hidden-tracks-api)
+
 ## Hidden-Tracks-Client URL
 
 - Live app: [Hidden-Tracks-Client](https://jkjellan.github.io/hidden-tracks-client/)
@@ -32,22 +35,23 @@ For my capstone project I plan to build the tournament functionality. I need to 
 
 ## User Stories
 Acheived:
--As a user, I want to build a song catalog of my favorite songs.
--As a user, I want to be able to remove a song from my catalog.
--As a user, I want to be able to edit a song from my catalog to change, for example, the title
+- As a user, I want to build a song catalog of my favorite songs.
+- As a user, I want to be able to remove a song from my catalog.
+- As a user, I want to be able to edit a song from my catalog to change, for example, the title
 As a user, I want a user authorization system to protect the privacy of my account.
 
 Future additions:
--As a user, I want a user profile that shows me: my song catalog, any active contests I'm involved in, and a history of past contests
--As a user, I want to be able to see a list of open tournaments, for which I can enter a song.
--As a user, I want to be able to vote on head-to-head competitions to help determine which songs advance through a given tournament.
+- As a user, I want a user profile that shows me: my song catalog, any active contests I'm involved in, and a history of past contests
+- As a user, I want to be able to see a list of open tournaments, for which I can enter a song.
+- As a user, I want to be able to vote on head-to-head competitions to help determine which songs advance through a given tournament.
 
 ## Wireframes:
-- I made a couple of rough sketces to start:  [desktop](http://i.imgur.com/1xwuf1b.jpg) and [mobile](http://i.imgur.com/rFRisS6.jpg)
+- I made a rough sketch to start:  [desktop](http://i.imgur.com/DSaoAOK.jpg)
 
 
 ## Technologies Used
 - Material Design
+- Bootstrap (just for the 'alert' classes)
 - YouTube API
 - jQuery
 - Rails
