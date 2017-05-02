@@ -10,8 +10,8 @@
 ## Overview
 This is Project Two "Individual Full Stack" for General Assembly Cohort WDI-LM01.
 
-Start Date: April 27th 2017
-End Date:  May 3rd 2017
+- Start Date: April 27th 2017
+- End Date:  May 3rd 2017
 
 ## The Idea
 The idea for this project dates back five years or so. I wanted to build a music discovery platform that makes it fun to find and share new music. I had a group of friends who were always sending new music back and forth through email and facebook. We did it to share music, but there was also a competitive aspect to it, which made the process enganging and addictive, and motivated each of us to continually search out the best new music. We each wanted to be the first to discover a great new song. It got me thinking about a new kind of music discovery platform--one where users compete against one another to find the best new music.
