@@ -90,6 +90,15 @@ const renderPlaylist = function (songs) {
     console.log(store.id)
     appEvents.onDeleteSong()
   })
+  $('.my-player-button').on('click', (event) => {
+    console.log('I can play this song')
+    const url = $(event.target).parent().parent().parent().parent().find('.player-url').attr('src')
+    console.log(url)
+    const title = $(event.target).parent().parent().parent().find('.player-title').text()
+    console.log(title)
+    helpers.showView(['content-grid-view', 'song-player-view', 'drawer-view', 'header-view'])
+    renderPlayer(title, url)
+  })
 }
 
 const submitAddSongForm = function (url, title) {
@@ -136,7 +145,16 @@ const renderSearchResults = function () {
   componentHandler.upgradeDom()
 }
 
+const renderPlayer = function (title, url) {
+  const playerTitle = title
+  const playerUrl = url
+  $('#insert-song-player-results-here').html('')
+
+  $('#insert-song-player-results-here').append(injectHtml.playerHtml(playerTitle, playerUrl))
+}
+
 module.exports = {
   renderPlaylist,
-  renderSearchResults
+  renderSearchResults,
+  renderPlayer
 }

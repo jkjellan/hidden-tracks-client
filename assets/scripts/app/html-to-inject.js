@@ -4,17 +4,17 @@ const songHtml = (title, artist, url, id, delimiter) => {
   const songHtml =
   `<div class='my-song-card mdl-cell--middle mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp'>` +
     "<div class='my-avatar-dropdown'>" +
-      `<div class='mdl-card__title'>${artist} ${delimiter} ${title}` +
+      `<div class='mdl-card__title'><span class='player-title'>${artist} ${delimiter} ${title}</span>` +
         "<div class='mdl-layout-spacer'></div>" +
-        // "<button id='exit-add-song' class='my-close-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon'>" +
-        // "<i class='material-icons' role='presentation'>close</i>" +
-        // "<span class='visuallyhidden'>Accounts</span>" +
-        // "</button>" +
+        "<button id='play-song' class='my-player-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon'>" +
+        "<i class='material-icons' role='presentation'>airplay</i>" +
+        "<span class='visuallyhidden'>Accounts</span>" +
+        "</button>" +
       "</div>" +
     "</div>" +
 
     "<div class=' mdl-cell--middle mdl-card__media'>" +
-      `<iframe width='auto' height='auto' src='${url}' frameborder='0'></iframe>` +
+      `<iframe class='player-url' width='auto' height='auto' src='${url}' frameborder='0'></iframe>` +
     "</div>" +
     "<div class='mdl-card__actions'>" +
       `<button id='button${id}' class='mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon'>` +
@@ -54,7 +54,15 @@ const searchHtml = (title, url) => {
   return searchHtml
 }
 
+const playerHtml = (title, url) => {
+  const playerHtml =
+    `<div class='player-results-header'>${title}</div>` +
+    `<iframe width='100%' height='100%' src='${url}' frameborder='0'></iframe>`
+  return playerHtml
+}
+
 module.exports = {
   songHtml,
-  searchHtml
+  searchHtml,
+  playerHtml
 }

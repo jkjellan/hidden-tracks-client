@@ -87,6 +87,7 @@ function youtubeApiCall (query) {
 const onSearch = function (e) {
   if (!e) { e = window.event }
   if (e.keyCode === 13) {
+    $('#insert-song-player-results-here').html('')
     e.preventDefault()
     // hides any open forms when searching (i.e. changre password form or edit song form)
     helpers.showView(['content-grid-view', 'search-results', 'drawer-view', 'header-view'])

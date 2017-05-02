@@ -46,6 +46,7 @@ const signOutSuccess = () => {
   console.log('sign out success')
   store.user = null
   helpers.showView(['sign-in-view'])
+  $('#insert-song-player-results-here').html('')
   $('#insert-search-results-here').html('')
   // toggles the material design drawer upon signing out
   document.getElementById('my-layout').MaterialLayout.toggleDrawer()

@@ -51,6 +51,7 @@ const redirectToSignIn = function (event) {
 
 const redirectToChangePassword = function (event) {
   $('#insert-search-results-here').html('')
+  $('#insert-song-player-results-here').html('')
   helpers.showView(['content-grid-view', 'change-password-view', 'drawer-view', 'header-view'])
   // toggles the material design drawer upon selecting change pw
   document.getElementById('my-layout').MaterialLayout.toggleDrawer()
@@ -64,21 +65,25 @@ const exitChangePassword = function (event) {
 }
 
 const myMusicView = function (event) {
+  $('#insert-song-player-results-here').html('')
   helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'search-results'])
   document.getElementById('my-layout').MaterialLayout.toggleDrawer()
 }
 
 const myContestView = function (event) {
+  $('#insert-song-player-results-here').html('')
   helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'contest-view'])
   document.getElementById('my-layout').MaterialLayout.toggleDrawer()
 }
 
 const myHelpView = function (event) {
+  $('#insert-song-player-results-here').html('')
   helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'help-view'])
   document.getElementById('my-layout').MaterialLayout.toggleDrawer()
 }
 
 const myAboutView = function (event) {
+  $('#insert-song-player-results-here').html('')
   helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'about-view'])
 }
 

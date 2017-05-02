@@ -1,0 +1,44 @@
+// .song-player-wrapper {
+//   height: 100% !important;
+// }
+//
+// .player-results-wrapper {
+//   height: 100% !important;
+// }
+
+.video-container {
+  position:relative;
+  padding-bottom:56.25%;
+  padding-top:30px;
+  height:0;
+  overflow:hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+.my-player-card {
+  background: $background-dark !important;
+  height: 100% !important;
+}
+
+// makes it so title of contest result songs stays on one line,
+// so every cards stays same size, and
+// float left doesn't result on weird behavior
+div.my-player-title.mdl-card__title {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  color: $white !important;
+}
+
+div.player-results-header {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  padding: 25px 0 32px 0 !important;
+}
