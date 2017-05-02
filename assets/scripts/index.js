@@ -12,7 +12,7 @@ $(() => {
   setAPIOrigin(location, config)
   // Upon page load, hides all views except views passed in array to showView
   // View options are 'header-view' 'drawer-view' 'sign-in-view' 'sign-up-view' 'change-password-view'
-  console.log('Page loaded')
+  // console.log('Page loaded')
   helpers.showView(['sign-in-view'])
   authEvents.addHandlers()
   appEvents.addHandlers()

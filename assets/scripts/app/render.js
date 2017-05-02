@@ -34,15 +34,15 @@ const renderPlaylist = function (songs) {
   const appEvents = require('./events')
 
   $('#insert-songs-here').html('')
-  console.log('rendering playlist, yo')
-  console.log(songs)
+  // console.log('rendering playlist, yo')
+  // console.log(songs)
 
   // sort songs by id so newly added songs are at top of playlist
   songs.sort(function (a, b) {
     return b.id - a.id
   })
   for (let i = 0; i < songs.length; i++) {
-    console.log(songs[i])
+    // console.log(songs[i])
     const title = songs[i].song_title
     const artist = songs[i].artist_name
     let url = songs[i].song_url
@@ -70,7 +70,7 @@ const renderPlaylist = function (songs) {
     // they are in the same container
     $('#insert-search-results-here').html('')
     $('#insert-song-player-results-here').html('')
-    console.log('I can edit this song')
+    // console.log('I can edit this song')
     const songId = $(event.target).attr('data-id')
     // storing song id, which will be used to in the AJAX DELETE request
     // invoked below in onDeleteSong()
@@ -80,7 +80,7 @@ const renderPlaylist = function (songs) {
     helpers.showView(['content-grid-view', 'edit-song-view', 'drawer-view', 'header-view'])
   })
   $('.delete-song').on('click', (event) => {
-    console.log('I can delete this song')
+    // console.log('I can delete this song')
 
     // passes data-id (which is set to the song id) of the song
     // the user is trying to delete
@@ -88,22 +88,22 @@ const renderPlaylist = function (songs) {
     // storing song id, which will be used to in the AJAX DELETE request
     // invoked below in onDeleteSong()
     store.id = songId
-    console.log(store.id)
+    // console.log(store.id)
     appEvents.onDeleteSong()
   })
   $('.my-player-button').on('click', (event) => {
-    console.log('I can play this song')
+    // console.log('I can play this song')
     const url = $(event.target).parent().parent().parent().parent().find('.player-url').attr('src')
-    console.log(url)
+    // console.log(url)
     const title = $(event.target).parent().parent().parent().find('.player-title').text()
-    console.log(title)
+    // console.log(title)
     helpers.showView(['content-grid-view', 'song-player-view', 'drawer-view', 'header-view'])
     renderPlayer(title, url)
   })
 }
 
 const submitAddSongForm = function (url, title) {
-  console.log('in submitAddSongForm')
+  // console.log('in submitAddSongForm')
   $('#song_title').val(title)
   $('#artist_name').val('')
   $('#song_url').val(url)
@@ -116,13 +116,13 @@ const renderSearchResults = function () {
   // exported and called from various parts of the application
 
   $('#insert-search-results-here').html('')
-  console.log('rendering search results, yo')
-  console.log(store.search)
+  // console.log('rendering search results, yo')
+  // console.log(store.search)
   const songs = store.search
 
   for (let i = 0; i < songs.items.length; i++) {
-    console.log('in render function')
-    console.log(songs.items[i])
+    // console.log('in render function')
+    // console.log(songs.items[i])
     const title = songs.items[i].snippet.title
     let url = songs.items[i].id.videoId
 
@@ -135,11 +135,11 @@ const renderSearchResults = function () {
   }
   // attached add song handlers to each search result so they can be added to playlist
   $('.add-search-song').on('click', (event) => {
-    console.log('I can add this song')
+    // console.log('I can add this song')
     const url = $(event.target).parent().parent().parent().find('.url-class').attr('src')
-    console.log(url)
+    // console.log(url)
     const title = $(event.target).parent().parent().parent().find('.my-search-title').text()
-    console.log(title)
+    // console.log(title)
     submitAddSongForm(url, title)
   })
   // refresh the DOM so MDL js is active for recently injected html elements

@@ -9,7 +9,7 @@ const store = require('../store')
 const onNewSong = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log(data)
+  // console.log(data)
   // const data = {
   //   'song': {
   //     'song_title': 'Ajax',
@@ -24,7 +24,7 @@ const onNewSong = function (event) {
 }
 
 const addSong = function (event) {
-  console.log('clicked add song')
+  // console.log('clicked add song')
   $('main').scrollTop(0)
   helpers.showView(['content-grid-view', 'add-song-view', 'drawer-view', 'header-view', 'search-results'])
 }
@@ -38,7 +38,7 @@ const exitAddSong = function (event) {
 const onGetSongs = () => {
   // needed locally because onGetSongs is called from newSongSuccess in app ui
   const api = require('./api')
-  console.log('in onGetSongs')
+  // console.log('in onGetSongs')
   api.getSongs()
     .then(ui.getSongsSuccess)
     .catch(ui.getSongsFailure)
@@ -56,7 +56,7 @@ const onDeleteSong = () => {
 const onEditSong = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log(data)
+  // console.log(data)
   api.editSong(data)
     .then(ui.editSongSuccess)
     .catch(ui.editSongFailure)
@@ -68,7 +68,7 @@ function youtubeApiCall (query) {
   const base = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCbVcF-CQLSKJIrAtwywxY9Uw8lcrggE30&part=snippet&maxResults=6&videoEmbeddable=true&type=video&q='
   const q = query
   const url = base + q
-  console.log('first line of youtubeApicall')
+  // console.log('first line of youtubeApicall')
   $.ajax({
     cache: false,
     dataType: 'json',
@@ -77,8 +77,8 @@ function youtubeApiCall (query) {
     url: url
   })
   .done(function (data) {
-    console.log(data)
-    console.log('in .done of AJAX')
+    // console.log(data)
+    // console.log('in .done of AJAX')
     store.search = data
     search.displaySearch()
   })
@@ -93,7 +93,7 @@ const onSearch = function (e) {
     helpers.showView(['content-grid-view', 'search-results', 'drawer-view', 'header-view'])
     const query = $(e.target).val()
     $(e.target).val('')
-    console.log(query)
+    // console.log(query)
     youtubeApiCall(query)
     // let request = gapi.client.youtube.search.list({
     //   q: encodeURIComponent(search).replace(/%20/g, '+'),
@@ -117,7 +117,7 @@ const onSearch = function (e) {
 }
 
 const onClearSearch = function () {
-  console.log('clearing search results')
+  // console.log('clearing search results')
   $('#insert-search-results-here').html('')
 }
 

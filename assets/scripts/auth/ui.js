@@ -6,7 +6,7 @@ const selectors = require('./selectors')
 const appEvents = require('../app/events')
 
 const signUpSuccess = (ajaxResponse) => {
-  console.log('sign up Success')
+  // console.log('sign up Success')
   helpers.showView(['sign-in-view'])
   helpers.showAlert($('#sign-in-success-message'))
 
@@ -15,8 +15,8 @@ const signUpSuccess = (ajaxResponse) => {
 }
 
 const signUpFailure = (error) => {
-  console.error(error)
-  console.log('sign up failure')
+  // console.error(error)
+  // console.log('sign up failure')
   helpers.showAlert($('#sign-up-failure-message'))
 
   // clears sign-up form fields upon sign-in
@@ -24,7 +24,7 @@ const signUpFailure = (error) => {
 }
 
 const signInSuccess = (ajaxResponse) => {
-  console.log('sign in success', ajaxResponse.user)
+  // console.log('sign in success', ajaxResponse.user)
   store.user = ajaxResponse.user
   helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'search-results'])
   selectors.sideDrawer.userSignedIn.html(store.user.email)
@@ -35,7 +35,7 @@ const signInSuccess = (ajaxResponse) => {
 }
 
 const signInFailure = (error) => {
-  console.error(error)
+  // console.error(error)
   helpers.showAlert($('#sign-in-failure-message'))
 
   // clears sign-in form fields upon sign-in
@@ -43,7 +43,7 @@ const signInFailure = (error) => {
 }
 
 const signOutSuccess = () => {
-  console.log('sign out success')
+  // console.log('sign out success')
   store.user = null
   helpers.showView(['sign-in-view'])
   $('#insert-song-player-results-here').html('')
@@ -53,11 +53,11 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = (error) => {
-  console.error(error)
+  // console.error(error)
 }
 
 const changePasswordSuccess = () => {
-  console.log('change password success, nothing was returned')
+  // console.log('change password success, nothing was returned')
   // is it necessary to clear out user store?
   // store.user = null
   helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'search-results'])
@@ -67,7 +67,7 @@ const changePasswordSuccess = () => {
 }
 
 const changePasswordFailure = (error) => {
-  console.error(error)
+  // console.error(error)
   helpers.showAlert($('#change-password-failure-message'))
 
   // clears change-password form fields upon sign-in
