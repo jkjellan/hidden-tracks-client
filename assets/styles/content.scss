@@ -1,6 +1,8 @@
 .my-content-wrapper {
   overflow-y: scroll;
-  background: $background-mid;
+  // background: $background-mid;
+  background: none;
+
   padding: 5px !important;
 }
 

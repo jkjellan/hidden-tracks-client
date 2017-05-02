@@ -13,11 +13,25 @@ $color-accent-contrast: rgba(0, 0, 0, .8);
 
 // test
 $primary-light: #FF7043;
+$primary-light-t: rgba(255, 112, 67, .5);
+
 $primary: #BF360C;
+$primary-t: rgba(191, 54, 12, .5);
+
 $primary-dark: #BF360C;
+$primary-dark-t: rgba(191, 54, 12, .4);
+
 $secondary-light: #757575;
+$secondary-light-t: rgba(117, 117, 117, .4);
+$secondary-light-tt: rgba(90, 90, 90, .8);
+
 $secondary: #212121;
-$secondary-dark: #9E9D24;
+$secondary-t: rgba(33, 33, 33, .5);
+$secondary-tt: rgba(33, 33, 33, .8);
+
+$secondary-dark: #212121;
+$secondary-dark-t: rgba(33, 33, 33, .9);
+$secondary-dark-tt: rgba(33, 33, 33, .7);
 
 
 // shades of red
@@ -31,8 +45,14 @@ $color-text-dark: rgba(0, 0, 0, .6);
 
 //
 $background-dark: #212121;
+$background-dark-t: rgba(33, 33, 33, .9);
+
 $background-mid: #424242;
+$background-mid-t: rgba(66, 66, 66, .3);
+
 $background-light:  #F5F5F5;
+$background-light-t:  rgba(245, 245, 245, .8);
+
 
 $white: #fff;
 $black: #000;

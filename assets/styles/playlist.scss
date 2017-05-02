@@ -1,18 +1,19 @@
 .my-playlist-wrapper {
   overflow-y: scroll;
   // height: 100% !important;
-  background: $background-dark;
+  background: $background-dark-t;
   padding: 5px !important;
 }
 
 .my-playlist-wrapper .mdl-card__title {
-  background: $background-mid !important;
+  // background: $background-mid-t !important;
+  background: none !important;
   color: $white !important;
 }
 
 // set background color and margin between song cards
 .my-song-card {
-  background: $background-mid !important;
+  background: $secondary-light-t !important;
   margin-bottom: 15px !important;
 }
 
@@ -25,7 +26,8 @@
 
 // Centers Add Song button and sets background color behind button
 .my-new-song-card {
-  background: $secondary !important;
+  // background: $background-dark-t !important;
+  background: none !important;
   text-align: center !important;
   padding: 5px !important;
 }
