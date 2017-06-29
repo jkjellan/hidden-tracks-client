@@ -11,7 +11,7 @@ require('./assets/scripts/index.js')
 require('./assets/styles/index.scss')
 
 // adds material design lite, which I store locally in assets
-require('./assets/mdl/material-design-lite/material.min.js')
+require('material-design-lite')
 
 // adds google api to project, which I store locally
 // require('./node_modules/googleapis/apis/youtube/v3.js')
