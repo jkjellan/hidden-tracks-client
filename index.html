@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Hidden Tracks</title>
+      <script src="https://use.fontawesome.com/1861878655.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- for google site verification for Youtube API-->
+      <meta name="google-site-verification" content="N6pJQ5H0x9Ey0ndX9K6fETSStbLknnVqmEbom0RPFWA" />
+
+      <!-- google fonts used in css -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+    </head>
+    <body style="height:100%">
+      <div id="my-layout" class="my-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <!--start of header -->
+          <header id="header-view" class="view my-header mdl-layout__header">
+            <div class="mdl-layout__header-row">
+              <span class="mdl-layout-title"></span>
+              <div class="mdl-layout-spacer"></div>
+              <form>
+              <div class="my-expand-search mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                  <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                  <input class="mdl-textfield__input" type="text" id="search">
+                  <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                </div>
+              </div>
+            </form>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+                <i class="material-icons">more_vert</i>
+              </button>
+              <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+                <li id="about" class="mdl-menu__item">About Hidden Tracks</li>
+              </ul>
+            </div>
+          </header>
+
+          <!-- Start of side navigration drawer -->
+          <div id="drawer-view" class="view mdl-layout__drawer">
+            <header class="my-drawer-header">
+              <div class="my-avatar-dropdown">
+                <span id="user-signed-in">jkjellan@gmail.com</span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                  <i class="material-icons" role="presentation">arrow_drop_down</i>
+                  <span class="visuallyhidden">Accounts</span>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                  <li id='sign-out' class="mdl-menu__item">Log Out</li>
+                  <li id='change-password-redirect' class="mdl-menu__item">Change Password</li>
+                </ul>
+              </div>
+            </header>
+
+                  <!-- elements inside side drawer -->
+            <nav class="my-navigation mdl-navigation">
+              <p id="my-music" class="mdl-navigation__link"><i class="material-icons" role="presentation">queue_music</i>My Music</p>
+              <p id="contests" class="mdl-navigation__link"><i class="material-icons" role="presentation">filter_list</i>Tournaments</p>
+              <div class="mdl-layout-spacer"></div>
+              <p id="help" class="mdl-navigation__link"><i class="material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></p>
+            </nav>
+          </div>
+        <!-- End of side navigration drawer -->
+
+          <!-- Start of main content area i.e auth forms and application content -->
+          <main style="height:100%" class="mdl-layout__content">
+
+            <!-- Sign in form-->
+            <div id="sign-in-view" class="view my-auth-card mdl-card mdl-shadow--6dp">
+              <div class="my-form-header mdl-card__title">
+                <h2 class="mdl-card__title-text">Sign In</h2>
+              </div>
+                <form id="sign-in">
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" name="credentials[email]" id="sign-in-email">
+                      <label class="mdl-textfield__label" for="sign-in-email">Email</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="password" name="credentials[password]" id="sign-in-password">
+                      <label class="mdl-textfield__label" for="sign-in-password">Password</label>
+                    </div>
+                    <button type="submit" name="submit" class="sign-in-spinner my-button form-button mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Please Wait...">
+                      Sign In
+                    </button>
+
+                </form>
+                <div class="my-form-footer">
+                  <p>Don't have an account?
+                    <span id="sign-up-redirect" class="auth-link">Sign Up!</span>
+                  </p>
+                </div>
+              </div>
+            <!-- End of Sign-in -->
+
+
+            <!-- Sign Up form-->
+            <div id="sign-up-view" class="view my-auth-card mdl-card mdl-shadow--6dp">
+              <div class="my-form-header mdl-card__title">
+                <h2 class="mdl-card__title-text">Create Account</h2>
+              </div>
+                <form id="sign-up">
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="text" name="credentials[email]" id="sign-in-email">
+                      <label class="mdl-textfield__label" for="sign-in-email">Email</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="password" name="credentials[password]" id="sign-in-password">
+                      <label class="mdl-textfield__label" for="sign-in-password">Password</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                      <input class="mdl-textfield__input" type="password" name="credentials[password_confirmation]" id="sign-in-password">
+                      <label class="mdl-textfield__label" for="sign-in-password">Confirm Password</label>
+                    </div>
+                    <button type="submit" name="submit" class="sign-up-spinner my-button form-button mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Please Wait...">
+                      Sign Up
+                    </button>
+
+                </form>
+                <div class="my-form-footer">
+                  <p>Already have an account?
+                    <span id="sign-in-redirect" class="auth-link">Sign In!</span>
+                  </p>
+                </div>
+              </div>
+            <!-- End of Sign-Up -->
+
+            <!-- Sign-up/in Messages-->
+            <div class="alert-wrapper">
+              <div id="sign-up-failure-message" class="my-auth-alert alert alert-danger" role="alert">Problem signing in. Email already in use.</div>
+              <div id="sign-in-success-message" class="my-auth-alert alert alert-success" role="alert">Account created. Now sign in!</div>
+              <div id="sign-in-failure-message" class="my-auth-alert alert alert-danger" role="alert">Wrong password. Try again</div>
+            </div>
+            <!-- End of Form Messages -->
+
+
+            <!-- mdl content grid -->
+            <div id="content-grid-view" class="view mdl-grid">
+
+
+              <!-- Start of Search Area -->
+              <div class="my-content-wrapper mdl-cell mdl-cell--7-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+
+                <div id="search-results" class="view">
+                  <div class="search-results-header">Search To Add Songs
+                    <button id='clear-search-results' class='my-clear-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon'>
+                    <i class='material-icons' role='presentation'>close</i>
+                    <!-- <span class='visuallyhidden'>Accounts</span> -->
+                    </button>
+
+                  </div>
+
+                  <div id="insert-search-results-here"></div>
+
+                </div>
+
+                <!-- Change Password Form-->
+                <div class="pw-wrapper">
+                <div id="change-password-view" class="view my-auth-card mdl-card mdl-shadow--6dp">
+                  <div class="my-form-header mdl-card__title">
+                    <div class="my-avatar-dropdown">
+                      <h2 class="mdl-card__title-text">Change Password</h2>
+                      <div class="mdl-layout-spacer"></div>
+                      <button id="exit-change-password" class="my-close-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                        <i class="material-icons" role="presentation">close</i>
+                        <span class="visuallyhidden">Accounts</span>
+                      </button>
+                    </div>
+                  </div>
+                    <form id="change-password">
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="password" name="passwords[old]" id="sign-in-email">
+                          <label class="mdl-textfield__label" for="sign-in-email">Old Password</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="password" name="passwords[new]" id="sign-in-password">
+                          <label class="mdl-textfield__label" for="sign-in-password">New Password</label>
+                        </div>
+                        <button type="submit" name="submit" class="my-button form-button mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Change Password
+                        </button>
+
+                    </form>
+                    <div class="my-form-footer">
+                      <p>Your security is totally a priority</p>
+                    </div>
+                  </div>
+                </div>
+                  <!-- End of Change Password -->
+
+                  <!-- Change Password Messages-->
+                  <div id="change-password-failure-message" class="my-auth-alert alert alert-danger" role="alert">Wrong password. Try again</div>
+                  <!-- End of Change Passwords Messages -->
+
+                <!-- Add Song Form-->
+                <div id="add-song-view" class="view my-auth-card mdl-card mdl-shadow--6dp">
+                  <div class="my-form-header mdl-card__title">
+                    <div class="my-avatar-dropdown">
+                      <h2 class="mdl-card__title-text">Add New Song</h2>
+                      <div class="mdl-layout-spacer"></div>
+                      <button id="exit-add-song" class="my-close-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                        <i class="material-icons" role="presentation">close</i>
+                        <span class="visuallyhidden">Accounts</span>
+                      </button>
+                    </div>
+                  </div>
+                    <form id="add-song">
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" name="song[song_title]"  type="text" id="song_title">
+                          <label class="mdl-textfield__label">Song Title</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" name="song[artist_name]" type="text" id="artist_name">
+                          <label class="mdl-textfield__label">Artist Name</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" name="song[song_url]" type="text" id="song_url">
+                          <label class="mdl-textfield__label">Youtube URL</label>
+                        </div>
+                        <button type="submit" name="submit" class="my-button form-button mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Add Song
+                        </button>
+
+                    </form>
+                    <div class="my-form-footer">
+                      <p></p>
+                    </div>
+                  </div>
+                <!-- End of Add Song -->
+
+
+                <!-- Edit Song Form-->
+                <div id="edit-song-view" class="view my-auth-card mdl-card mdl-shadow--6dp">
+                  <div class="my-form-header mdl-card__title">
+                    <div class="my-avatar-dropdown">
+                      <h2 class="mdl-card__title-text">Edit Song</h2>
+                      <div class="mdl-layout-spacer"></div>
+                      <button id="exit-edit-song" class="my-close-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                        <i class="material-icons" role="presentation">close</i>
+                        <span class="visuallyhidden">Accounts</span>
+                      </button>
+                    </div>
+                  </div>
+                    <form id="edit-song">
+
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" name="song[song_title]"  type="text" id="edit_song_title">
+                          <label class="mdl-textfield__label">Song Title</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" name="song[artist_name]" type="text" id="edit_artist_name">
+                          <label class="mdl-textfield__label">Artist Name</label>
+                        </div>
+                        <button type="submit" name="submit" class="my-button form-button mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                          Edit Song
+                        </button>
+
+                    </form>
+                    <div class="my-form-footer">
+                      <p></p>
+                    </div>
+                  </div>
+                <!-- End of Edit Song -->
+
+
+                <!-- Start of Contest Area-->
+                <div id="contest-view" class="view">
+
+                  <div id="contest-results">
+                    <div class="contest-results-header">Tournament View
+                      <p>Coming soon...</p>
+                    </div>
+
+                    <div id="insert-contest-results-here"></div>
+
+                  </div>
+                </div>
+                <!-- End of Contest Area -->
+
+                <!-- Start of Help Area-->
+                <div id="help-view" class="view">
+
+                  <div id="help-results">
+                    <div class="help-results-header">Need Help?
+                      <p>Coming soon...</p>
+                    </div>
+
+                    <div id="insert-help-results-here"></div>
+
+                  </div>
+                </div>
+                <!-- End of Help Area -->
+
+                <!-- Start of About Area-->
+                <div id="about-view" class="view">
+
+                  <div id="about-results">
+                    <div class="about-results-header">About Hidden Tracks
+                      <p>Wouldn't you like to know...</p>
+                    </div>
+
+                    <div id="insert-about-results-here"></div>
+
+                  </div>
+                </div>
+                <!-- End of About Area -->
+
+                <!-- Start of Song Player-->
+                <div id="song-player-view" class="view song-player-wrapper">
+                  <div class="player-results-header">Video Player</div>
+                  <div id="player-results" class="player-results-wrapper">
+                    <div class="video-container" id="insert-song-player-results-here"></div>
+                  </div>
+                </div>
+                <!-- End of Song Player -->
+
+
+              </div>
+              <!-- End of Main Content Area-->
+
+
+              <!-- Start of User Playlist -->
+              <div class="my-playlist-wrapper mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+
+                <div class="my-new-song-card">
+                  <div class="my-song-catalog-header">My Songs</div>
+                  <button style="display: none" type="button" id="add-song-form" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+                    <i class="material-icons">add_cirlce</i>
+                  </button>
+                </div>
+
+                <div id="insert-songs-here"></div>
+
+              </div>
+              <!-- End of User Playlist -->
+
+            </div>
+          </main>
+      </div>
+      <!-- YouTube API -->
+      <!-- <script src="assets/scripts/app/youtube.js"></script>
+      <script src="https://apis.google.com/js/client.js?onload=init"></script> -->
+
+    </body>
+</html>
