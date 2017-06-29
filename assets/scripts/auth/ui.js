@@ -6,6 +6,7 @@ const selectors = require('./selectors')
 const appEvents = require('../app/events')
 
 const signUpSuccess = (ajaxResponse) => {
+  $('.sign-up-spinner').button('reset')
   // console.log('sign up Success')
   helpers.showView(['sign-in-view'])
   helpers.showAlert($('#sign-in-success-message'))
@@ -15,6 +16,7 @@ const signUpSuccess = (ajaxResponse) => {
 }
 
 const signUpFailure = (error) => {
+  $('.sign-up-spinner').button('reset')
   // console.error(error)
   // console.log('sign up failure')
   helpers.showAlert($('#sign-up-failure-message'))
@@ -24,6 +26,7 @@ const signUpFailure = (error) => {
 }
 
 const signInSuccess = (ajaxResponse) => {
+  $('.sign-in-spinner').button('reset')
   // console.log('sign in success', ajaxResponse.user)
   store.user = ajaxResponse.user
   helpers.showView(['drawer-view', 'header-view', 'content-grid-view', 'search-results'])
@@ -35,6 +38,7 @@ const signInSuccess = (ajaxResponse) => {
 }
 
 const signInFailure = (error) => {
+  $('.sign-in-spinner').button('reset')
   // console.error(error)
   helpers.showAlert($('#sign-in-failure-message'))
 

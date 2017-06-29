@@ -9,6 +9,16 @@ const appEvents = require('./app/events.js')
 const helpers = require('./helpers')
 
 $(() => {
+  $('.sign-up-spinner').on('click', function () {
+    // console.log('submitted sign up')
+    $('.sign-up-spinner').button('loading')
+  })
+
+  $('.sign-in-spinner').on('click', function () {
+    // console.log('submitted sign in')
+    $('.sign-in-spinner').button('loading')
+  })
+
   setAPIOrigin(location, config)
   // Upon page load, hides all views except views passed in array to showView
   // View options are 'header-view' 'drawer-view' 'sign-in-view' 'sign-up-view' 'change-password-view'
@@ -16,6 +26,8 @@ $(() => {
   helpers.showView(['sign-in-view'])
   authEvents.addHandlers()
   appEvents.addHandlers()
+  $('#sign-up').find('input:text, input:password, select, textarea').val('')
+  $('#sign-in').find('input:text, input:password, select, textarea').val('')
 })
 
 // use require with a reference to bundle the file and use it in this file
